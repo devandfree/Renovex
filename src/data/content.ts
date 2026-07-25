@@ -1,6 +1,6 @@
 import { ServiceItem, ProjectItem, BlogPost } from '../types';
 
-export const HERO_ENGINEERS_IMAGE = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80';
+export const HERO_ENGINEERS_IMAGE = 'https://www.hebergeur-image.com/upload/129.0.60.37-6a64c3f24cf3b.jpg';
 export const ABOUT_BLUEPRINTS_IMAGE = 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80';
 
 export const SERVICES_DATA: ServiceItem[] = [
