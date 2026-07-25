@@ -85,8 +85,14 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking, onNavigate 
         </div>
 
         {/* Bottom copyright row */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <p>© {new Date().getFullYear()} Renovex BTP. {lang === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
+          
+          <div className="flex items-center gap-2 bg-gray-900/90 px-3.5 py-1.5 rounded-full border border-gray-800/80 text-xs text-gray-400 shadow-inner">
+            <span>{lang === 'fr' ? 'Site conçu & développé par' : 'Site designed & developed by'}</span>
+            <span className="font-semibold text-amber-400 tracking-wide">Steve Emane</span>
+          </div>
+
           <div className="flex space-x-6">
             <a href="#" className="hover:text-gray-300 transition-colors">{lang === 'fr' ? 'Mentions Légales' : 'Legal Notice'}</a>
             <a href="#" className="hover:text-gray-300 transition-colors">{lang === 'fr' ? 'Politique de Confidentialité' : 'Privacy Policy'}</a>
