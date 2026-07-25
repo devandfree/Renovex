@@ -1,7 +1,7 @@
 import { ServiceItem, ProjectItem, BlogPost } from '../types';
 
-export const HERO_ENGINEERS_IMAGE = '/src/assets/images/construction_engineers_site_1784817492332.jpg';
-export const ABOUT_BLUEPRINTS_IMAGE = '/src/assets/images/blueprints_hardhat_tools_1784817506781.jpg';
+export const HERO_ENGINEERS_IMAGE = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80';
+export const ABOUT_BLUEPRINTS_IMAGE = 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
