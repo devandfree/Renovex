@@ -22,6 +22,7 @@ import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
 import { CallbackModal } from './components/CallbackModal';
 import { ServiceModal } from './components/ServiceModal';
+import { ServiceDetailPage } from './components/ServiceDetailPage';
 import { BackToTop } from './components/BackToTop';
 
 export default function App() {
@@ -29,18 +30,21 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [currentView, setCurrentView] = useState<'home' | 'about' | 'services' | 'projects' | 'blog' | 'contact'>('home');
 
-  // Modals state
+  // Modals & Detailed Views state
   const [bookingOpen, setBookingOpen] = useState(false);
   const [callbackOpen, setCallbackOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+  const [selectedServiceModal, setSelectedServiceModal] = useState<ServiceItem | null>(null);
+  const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<BlogPost | null>(null);
 
-  // Automatically scroll to top of window whenever the active page view or selected article changes
+  // Automatically scroll to top of window whenever active page view, selected service, or article changes
   React.useEffect(() => {
     window.scrollTo(0, 0);
-  }, [currentView, selectedArticle]);
+  }, [currentView, selectedArticle, selectedServiceId]);
 
   const handleNavSectionChange = (sec: string) => {
+    setSelectedServiceId(null);
+    setSelectedArticle(null);
     setActiveSection(sec);
     if (sec === 'about') {
       setCurrentView('about');
@@ -49,7 +53,6 @@ export default function App() {
     } else if (sec === 'projects') {
       setCurrentView('projects');
     } else if (sec === 'blog') {
-      setSelectedArticle(null);
       setCurrentView('blog');
     } else if (sec === 'contact') {
       setCurrentView('contact');
@@ -81,7 +84,16 @@ export default function App() {
 
       {/* Main Content Sections */}
       <main>
-        {currentView === 'about' ? (
+        {selectedServiceId ? (
+          <ServiceDetailPage
+            serviceId={selectedServiceId}
+            lang={lang}
+            onGoBack={() => setSelectedServiceId(null)}
+            onSelectService={(id) => setSelectedServiceId(id)}
+            onOpenBooking={() => setBookingOpen(true)}
+            onOpenCallback={() => setCallbackOpen(true)}
+          />
+        ) : currentView === 'about' ? (
           <AboutPage
             lang={lang}
             onGoBack={() => {
@@ -100,7 +112,7 @@ export default function App() {
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
-            onSelectService={(service) => setSelectedService(service)}
+            onSelectService={(service) => setSelectedServiceId(service.id)}
           />
         ) : currentView === 'projects' ? (
           <ProjectsPage
@@ -153,7 +165,7 @@ export default function App() {
             {/* 3. Services Tailored to You */}
             <ServicesSection
               lang={lang}
-              onSelectService={(service) => setSelectedService(service)}
+              onSelectService={(service) => setSelectedServiceId(service.id)}
             />
 
             {/* 4. About Our Company & Mission */}
@@ -253,8 +265,8 @@ export default function App() {
       />
 
       <ServiceModal
-        service={selectedService}
-        onClose={() => setSelectedService(null)}
+        service={selectedServiceModal}
+        onClose={() => setSelectedServiceModal(null)}
         lang={lang}
         onOpenBooking={() => setBookingOpen(true)}
       />

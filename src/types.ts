@@ -3,6 +3,8 @@ export type Language = 'fr' | 'en';
 export interface ServiceItem {
   id: string;
   iconName: string;
+  heroImage?: string;
+  category?: 'renovation' | 'residential' | 'commercial' | 'roofing';
   title: Record<Language, string>;
   description: Record<Language, string>;
   fullDetails: Record<Language, {
@@ -10,6 +12,12 @@ export interface ServiceItem {
     features: string[];
     typicalTimeline: string;
     startingPrice: string;
+  }>;
+  extendedDetails?: Record<Language, {
+    tagline: string;
+    technicalSpecs: Array<{ label: string; value: string }>;
+    processSteps: Array<{ step: string; title: string; desc: string }>;
+    faqs: Array<{ question: string; answer: string }>;
   }>;
   isDark?: boolean;
 }
