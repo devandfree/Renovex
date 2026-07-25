@@ -74,11 +74,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang, onOpenBooking,
                 className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-xl max-w-xs border border-gray-100"
               >
                 <div className="flex items-center gap-3 mb-1">
-                  <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold">
                     15+
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-gray-900">
+                    <h4 className="text-sm font-semibold text-gray-800">
                       {lang === 'fr' ? 'Années d\'Excellence' : 'Years of Excellence'}
                     </h4>
                     <p className="text-xs text-gray-500">
@@ -100,8 +100,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang, onOpenBooking,
           >
             <div className="bg-[#F8F9FA] rounded-[28px] p-8 sm:p-10 border border-gray-200/60 h-full flex flex-col justify-between shadow-xs">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Target className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold uppercase tracking-wider mb-6 border border-emerald-100">
+                  <Target className="w-3.5 h-3.5 text-emerald-600" />
                   <span>{lang === 'fr' ? 'Notre Vocation' : 'Our Mission'}</span>
                 </div>
 
@@ -119,37 +119,37 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang, onOpenBooking,
               {/* Pillars Grid */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0">
                     <Zap className="w-4 h-4" />
                   </div>
-                  <span className="text-sm font-semibold text-gray-800">
+                  <span className="text-sm font-medium text-gray-700">
                     {lang === 'fr' ? 'Innovation BTP' : 'BTP Innovation'}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <span className="text-sm font-semibold text-gray-800">
+                  <span className="text-sm font-medium text-gray-700">
                     {lang === 'fr' ? 'Garantie Décennale' : '10-Year Warranty'}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center flex-shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
-                  <span className="text-sm font-semibold text-gray-800">
+                  <span className="text-sm font-medium text-gray-700">
                     {lang === 'fr' ? 'Normes RE2020' : 'Green RE2020'}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center flex-shrink-0">
                     <Target className="w-4 h-4" />
                   </div>
-                  <span className="text-sm font-semibold text-gray-800">
+                  <span className="text-sm font-medium text-gray-700">
                     {lang === 'fr' ? 'Délais Respectés' : 'On-Time Delivery'}
                   </span>
                 </div>

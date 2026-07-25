@@ -87,11 +87,11 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ lang, onOpenPr
                     onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
                   />
                   
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-gray-900 shadow-xs">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-semibold text-gray-800 shadow-xs">
                     {project.category.toUpperCase()}
                   </div>
 
-                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-gray-900 group-hover:bg-[#F2B94C] transition-colors shadow-md">
+                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-md flex items-center justify-center text-gray-700 group-hover:bg-[#F2B94C] group-hover:text-amber-950 transition-colors shadow-md">
                     <Eye className="w-5 h-5" />
                   </div>
                 </div>

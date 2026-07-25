@@ -224,12 +224,12 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-2xl bg-amber-400 text-gray-950 flex items-center justify-center font-bold shadow-xs">
+                    <div className="w-14 h-14 rounded-2xl bg-amber-100/90 text-amber-700 flex items-center justify-center font-bold shadow-xs">
                       <IconComponent className="w-7 h-7" />
                     </div>
 
                     <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200/60">
-                      <ShieldCheck className="w-3.5 h-3.5" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                       Garantie AXA
                     </span>
                   </div>
@@ -245,7 +245,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   {/* Features List */}
                   {details?.features && (
                     <div className="space-y-2.5 mb-6 bg-gray-50 p-4 rounded-2xl border border-gray-100">
-                      <span className="text-xs font-bold text-gray-900 uppercase tracking-wider block mb-2">
+                      <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider block mb-2">
                         {lang === 'fr' ? 'Inclus dans la prestation :' : 'Key Inclusions:'}
                       </span>
                       {details.features.map((feat, fIdx) => (
@@ -332,7 +332,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                         <IconC className="w-4 h-4 text-amber-600" />
                       </div>
                     </div>
-                    <h3 className="text-base font-bold text-gray-900 mb-2">
+                    <h3 className="text-base font-semibold text-gray-800 mb-2">
                       {p.title[lang]}
                     </h3>
                     <p className="text-xs text-gray-600 leading-relaxed">

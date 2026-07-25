@@ -25,7 +25,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const getIcon = (iconName: string, isDark?: boolean) => {
-    const className = `w-6 h-6 ${isDark ? 'text-[#2D4030]' : 'text-emerald-700'}`;
+    const className = `w-6 h-6 ${isDark ? 'text-amber-400' : 'text-amber-600'}`;
     switch (iconName) {
       case 'Wrench': return <Wrench className={className} />;
       case 'Home': return <Home className={className} />;
@@ -143,7 +143,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     className={`inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4 hover:no-underline transition-all ${
                       isDark 
                         ? 'text-[#F2B94C] hover:text-amber-300' 
-                        : 'text-emerald-700 hover:text-emerald-900'
+                        : 'text-amber-600 hover:text-amber-700'
                     }`}
                   >
                     <span>{lang === 'fr' ? 'En savoir plus' : 'Learn More'}</span>

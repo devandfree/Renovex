@@ -220,11 +220,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </h3>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">
+                  <h4 className="text-sm font-semibold text-gray-800">
                     {lang === 'fr' ? 'Adresse du Siège' : 'Headquarters'}
                   </h4>
                   <p className="text-sm text-gray-600 mt-0.5">
@@ -234,11 +234,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">
+                  <h4 className="text-sm font-semibold text-gray-800">
                     {lang === 'fr' ? 'Téléphone Direct' : 'Direct Call'}
                   </h4>
                   <p className="text-sm text-gray-600 mt-0.5">
@@ -248,11 +248,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">Email</h4>
+                  <h4 className="text-sm font-semibold text-gray-800">Email</h4>
                   <p className="text-sm text-gray-600 mt-0.5">
                     contact@renovex-btp.fr
                   </p>
@@ -260,11 +260,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang }) => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="w-10 h-10 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-gray-900">
+                  <h4 className="text-sm font-semibold text-gray-800">
                     {lang === 'fr' ? 'Horaires d\'Ouverture' : 'Working Hours'}
                   </h4>
                   <p className="text-sm text-gray-600 mt-0.5">

@@ -82,7 +82,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         fr: 'Politique Zéro Accident sur tous nos chantiers. Port des EPI obligatoires, audits quotidiens et formation continue.',
         en: 'Zero Accident policy across all active sites. Mandatory PPE, daily safety audits, and ongoing team training.'
       },
-      color: 'bg-emerald-100 text-emerald-800'
+      color: 'bg-emerald-50 text-emerald-600'
     },
     {
       icon: Sparkles,
@@ -91,7 +91,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         fr: 'Utilisation de l\'impression 3D béton, des jumeaux numériques et de la préfabrication industrielle pour réduire les délais.',
         en: 'Leveraging 3D concrete printing, digital twins, and prefabrication to streamline delivery.'
       },
-      color: 'bg-amber-100 text-amber-800'
+      color: 'bg-amber-50 text-amber-600'
     },
     {
       icon: Recycle,
@@ -100,7 +100,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         fr: 'Valorisation à 90% des déchets de chantier, sélection de matériaux biosourcés et respect strict des normes RE2020.',
         en: '90% jobsite waste recycling, bio-sourced material sourcing, and strict RE2020 compliance.'
       },
-      color: 'bg-blue-100 text-blue-800'
+      color: 'bg-blue-50 text-blue-500'
     },
     {
       icon: Compass,
@@ -109,7 +109,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         fr: 'Devis détaillés sans coût caché et suivi de chantier en temps réel accessible aux maîtres d\'ouvrage via application dédiée.',
         en: 'Detailed itemized quotes with zero hidden costs and live digital site tracking for clients.'
       },
-      color: 'bg-purple-100 text-purple-800'
+      color: 'bg-purple-50 text-purple-500'
     }
   ];
 
@@ -294,8 +294,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             transition={{ duration: 0.6 }}
             className="lg:col-span-6 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-              <Target className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold uppercase tracking-wider border border-emerald-100">
+              <Target className="w-3.5 h-3.5 text-emerald-600" />
               <span>{lang === 'fr' ? 'Notre ADN' : 'Our DNA'}</span>
             </div>
 
@@ -318,7 +318,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-                  <span className="text-sm font-semibold text-gray-800">{item[lang]}</span>
+                  <span className="text-sm font-medium text-gray-700">{item[lang]}</span>
                 </div>
               ))}
             </div>

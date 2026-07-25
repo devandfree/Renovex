@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={onOpenBooking}
                 title="Book Now"
               >
-                <ArrowUpRight className="w-6 h-6 text-gray-900" />
+                <ArrowUpRight className="w-6 h-6 text-amber-950/80" />
               </motion.div>
             </div>
           </motion.div>
@@ -143,7 +143,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 </button>
               </div>
               <div className="text-sm font-medium text-gray-700 pl-2">
-                <span className="font-bold text-gray-900 block">100+ Experts</span>
+                <span className="font-semibold text-gray-800 block">100+ Experts</span>
                 <span className="text-xs text-gray-500">{lang === 'fr' ? 'À votre service' : 'On demand team'}</span>
               </div>
             </div>
@@ -156,7 +156,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={onOpenBooking}
                 className="bg-[#F2B94C] hover:bg-[#e0a83b] text-gray-950 text-base font-bold px-8 py-3.5 rounded-full shadow-md gold-glow shine-hover hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Calendar className="w-5 h-5 text-gray-950" />
+                <Calendar className="w-5 h-5 text-amber-950/80" />
                 <span>{lang === 'fr' ? 'Réserver' : 'Book now'}</span>
               </motion.button>
 
@@ -166,7 +166,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={onOpenCallback}
                 className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-300 text-base font-semibold px-8 py-3.5 rounded-full shadow-2xs hover:shadow transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Phone className="w-4 h-4 text-emerald-800" />
+                <Phone className="w-4 h-4 text-amber-600" />
                 <span>{lang === 'fr' ? 'Nous appeler' : 'Call us'}</span>
               </motion.button>
             </div>
