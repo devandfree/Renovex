@@ -20,26 +20,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Header Row: Main Title + Rotating Circular Badge */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.12]">
-              {lang === 'fr' 
-                ? 'Technologies Innovantes pour la Construction Moderne' 
-                : 'Innovative Technologies for Modern Construction'}
-            </h1>
-          </motion.div>
-
-          {/* Rotating Circular Renovex Emblem Badge */}
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 lg:gap-8 mb-10">
+          {/* Rotating Circular Renovex Emblem Badge (Placed first on mobile, right on desktop) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex-shrink-0 self-end lg:self-start pt-2"
+            className="relative flex-shrink-0 self-start pt-2 order-1 lg:order-2"
           >
             <div className="relative w-28 h-28 flex items-center justify-center">
               {/* Spinning SVG Text Circle */}
@@ -70,6 +57,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <ArrowUpRight className="w-6 h-6 text-gray-900" />
               </motion.div>
             </div>
+          </motion.div>
+
+          {/* Main Title (Placed second on mobile, left on desktop) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-3xl order-2 lg:order-1"
+          >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-[1.12]">
+              {lang === 'fr' 
+                ? 'Technologies Innovantes pour la Construction Moderne' 
+                : 'Innovative Technologies for Modern Construction'}
+            </h1>
           </motion.div>
         </div>
 

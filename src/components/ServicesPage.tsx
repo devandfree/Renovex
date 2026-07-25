@@ -17,6 +17,7 @@ import {
   ChevronRight,
   PhoneCall
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import { Language, ServiceItem } from '../types';
 import { SERVICES_DATA, HERO_ENGINEERS_IMAGE } from '../data/content';
 
@@ -104,11 +105,16 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
   ];
 
   return (
-    <div className="bg-[#FAFAFA] min-h-screen pt-4 pb-20 animate-in fade-in duration-300">
+    <div className="bg-[#FAFAFA] min-h-screen pt-4 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Button & Breadcrumb */}
-        <div className="mb-8 flex items-center justify-between">
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="mb-8 flex items-center justify-between"
+        >
           <button
             onClick={onGoBack}
             className="inline-flex items-center gap-2 text-sm font-semibold text-gray-700 bg-white hover:bg-gray-100 border border-gray-200 px-4 py-2.5 rounded-full transition-all shadow-2xs cursor-pointer"
@@ -120,10 +126,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           <div className="text-xs text-gray-500 font-medium">
             Renovex &gt; <span className="text-gray-900 font-bold">{lang === 'fr' ? 'Services' : 'Our Services'}</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Hero Banner Services */}
-        <div className="relative rounded-[32px] overflow-hidden bg-gray-900 text-white p-8 sm:p-14 mb-14 shadow-xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="relative rounded-[32px] overflow-hidden bg-gray-900 text-white p-8 sm:p-14 mb-14 shadow-xl"
+        >
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-400/30">
               <Sparkles className="w-4 h-4 text-amber-400" />
@@ -168,10 +179,15 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               className="w-full h-full object-cover" 
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-wrap items-center justify-center gap-2 mb-12"
+        >
           {[
             { id: 'all', label: { fr: 'Tous nos services', en: 'All Services' } },
             { id: 'renovation', label: { fr: 'Rénovation & Modulaire', en: 'Renovation & Modular' } },
@@ -190,17 +206,20 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               {tab.label[lang]}
             </button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Service Cards Detailed Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-          {filteredServices.map((service) => {
+          {filteredServices.map((service, index) => {
             const IconComponent = getServiceIcon(service.iconName);
             const details = service.fullDetails?.[lang];
 
             return (
-              <div 
+              <motion.div 
                 key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 + index * 0.08 }}
                 className="bg-white rounded-[28px] border border-gray-200/90 shadow-sm hover:shadow-md transition-all p-7 sm:p-9 flex flex-col justify-between"
               >
                 <div>
@@ -272,13 +291,19 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                     {lang === 'fr' ? 'Devis' : 'Quote'}
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Process Section - How We Work */}
-        <div className="bg-white rounded-[32px] p-8 sm:p-14 border border-gray-200/80 shadow-sm mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[32px] p-8 sm:p-14 border border-gray-200/80 shadow-sm mb-20"
+        >
           <div className="max-w-2xl mb-12">
             <span className="text-xs font-bold text-amber-600 uppercase tracking-widest block mb-2">
               {lang === 'fr' ? 'Méthodologie Pro' : 'Professional Workflow'}
@@ -292,7 +317,14 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             {processSteps.map((p, idx) => {
               const IconC = p.icon;
               return (
-                <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 relative flex flex-col justify-between">
+                <motion.div 
+                  key={idx} 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="bg-gray-50 rounded-2xl p-6 border border-gray-100 relative flex flex-col justify-between"
+                >
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-2xl font-black text-amber-500">{p.step}</span>
@@ -307,14 +339,20 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                       {p.desc[lang]}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Call To Action */}
-        <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white rounded-[32px] p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white rounded-[32px] p-8 sm:p-12 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8"
+        >
           <div className="space-y-3 max-w-2xl">
             <h3 className="text-2xl sm:text-3xl font-bold">
               {lang === 'fr' ? 'Un Projet de Construction ou de Rénovation ?' : 'Have a Construction or Renovation Project?'}
@@ -334,7 +372,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               {lang === 'fr' ? 'Estimer Mon Projet' : 'Get Estimate'}
             </button>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </div>
