@@ -258,7 +258,7 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: 'foundation-repair',
     iconName: 'Layers',
-    heroImage: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1200&q=80',
     category: 'commercial',
     title: {
       fr: 'Réparation de Fondations',

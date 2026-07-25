@@ -15,7 +15,8 @@ import {
   HardHat, 
   Compass, 
   ChevronRight,
-  PhoneCall
+  PhoneCall,
+  Award
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Language, ServiceItem } from '../types';
@@ -137,7 +138,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
         >
           <div className="relative z-10 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-400/30">
-              <Sparkles className="w-4 h-4 text-amber-400" />
+              <Award className="w-4 h-4 text-amber-400" />
               <span>{lang === 'fr' ? 'Savoir-Faire & Expertise BTP' : 'Craftsmanship & BTP Expertise'}</span>
             </div>
 
