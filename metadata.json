@@ -1,0 +1,6 @@
+{
+  "name": "Renovex - Modern Construction & BTP",
+  "description": "Reproduction fidèle du site web Renovex pour entreprise de BTP et rénovation modern avec calcul de devis, prise de rendez-vous, services et projets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
