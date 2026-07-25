@@ -43,6 +43,30 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
+  // Force scroll to top when service detail page is mounted or service ID changes
+  React.useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 20);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      clearTimeout(timer);
+    };
+  }, [serviceId]);
+
   const service = SERVICES_DATA.find((s) => s.id === serviceId) || SERVICES_DATA[0];
   const details = service.fullDetails[lang];
   const extended = service.extendedDetails?.[lang];

@@ -43,6 +43,21 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
   const [copied, setCopied] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
   const [questionText, setQuestionText] = useState('');
+
+  // Force scroll to top when article detail page is mounted or article ID changes
+  React.useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    return () => cancelAnimationFrame(frameId);
+  }, [article.id]);
   const [questionSubmitted, setQuestionSubmitted] = useState(false);
   const [userName, setUserName] = useState('');
   const [userContact, setUserContact] = useState('');

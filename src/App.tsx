@@ -38,8 +38,18 @@ export default function App() {
   const [selectedArticle, setSelectedArticle] = useState<BlogPost | null>(null);
 
   // Automatically scroll to top of window whenever active page view, selected service, or article changes
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
+  React.useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    const frameId = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+
+    return () => cancelAnimationFrame(frameId);
   }, [currentView, selectedArticle, selectedServiceId]);
 
   const handleNavSectionChange = (sec: string) => {
