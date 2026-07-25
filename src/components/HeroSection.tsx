@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowUpRight, Phone, Calendar, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Language } from '../types';
-import { HERO_ENGINEERS_IMAGE, TEAM_AVATARS } from '../data/content';
+import { HERO_ENGINEERS_IMAGE, ABOUT_BLUEPRINTS_IMAGE, TEAM_AVATARS } from '../data/content';
 
 interface HeroSectionProps {
   lang: Language;
@@ -89,6 +89,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 alt="Construction engineers reviewing blueprints on site"
                 className="w-full h-[380px] sm:h-[460px] object-cover object-center group-hover:scale-103 transition-transform duration-700 opacity-95"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = ABOUT_BLUEPRINTS_IMAGE; }}
               />
               
               {/* Subtle quality tag overlay */}

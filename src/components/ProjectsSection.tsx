@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Calendar, Layers, Eye, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Language, ProjectItem } from '../types';
-import { PROJECTS_DATA } from '../data/content';
+import { PROJECTS_DATA, HERO_ENGINEERS_IMAGE } from '../data/content';
 
 interface ProjectsSectionProps {
   lang: Language;
@@ -84,6 +84,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ lang, onOpenPr
                     alt={project.title[lang]}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
                   />
                   
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-bold text-gray-900 shadow-xs">
@@ -174,6 +175,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ lang, onOpenPr
                 alt={selectedProject.title[lang]}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
                 <div>

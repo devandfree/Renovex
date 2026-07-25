@@ -2,7 +2,7 @@ import React from 'react';
 import { Target, Award, ShieldCheck, Zap } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Language } from '../types';
-import { ABOUT_BLUEPRINTS_IMAGE } from '../data/content';
+import { ABOUT_BLUEPRINTS_IMAGE, HERO_ENGINEERS_IMAGE } from '../data/content';
 
 interface AboutSectionProps {
   lang: Language;
@@ -62,6 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ lang, onOpenBooking,
                 alt="Architectural blueprints and engineering tools"
                 className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
               />
 
               {/* Overlapping Badge */}

@@ -255,6 +255,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               src={HERO_ENGINEERS_IMAGE} 
               alt="Engineers site" 
               className="w-full h-full object-cover" 
+              referrerPolicy="no-referrer"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = ABOUT_BLUEPRINTS_IMAGE; }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-transparent to-transparent" />
           </div>
@@ -335,6 +337,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 alt="Blueprints and hardhat"
                 className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
                 <div className="text-white">
@@ -482,6 +485,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                       alt={member.name}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
                     />
                     <div className="absolute bottom-3 left-3 bg-black/75 text-white text-[11px] font-semibold px-2.5 py-1 rounded-full backdrop-blur-md">
                       {member.experience}

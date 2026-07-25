@@ -259,6 +259,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                       alt={project.title[lang]} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
                     />
                     <div className="absolute top-4 left-4 bg-gray-900/80 backdrop-blur-md text-amber-400 text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
                       {project.category}
@@ -449,6 +450,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
                 alt={modalProject.title[lang]}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = HERO_ENGINEERS_IMAGE; }}
               />
             </div>
 
