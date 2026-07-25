@@ -31,10 +31,6 @@ export const Header: React.FC<HeaderProps> = ({
   const handleNavClick = (id: string) => {
     setActiveSection(id);
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (

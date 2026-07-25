@@ -49,7 +49,7 @@ export const ArticleDetailPage: React.FC<ArticleDetailPageProps> = ({
 
   // Scroll to top on mount or when article changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, [article.id]);
 
   const handleShare = () => {

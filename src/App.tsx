@@ -35,34 +35,35 @@ export default function App() {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<BlogPost | null>(null);
 
+  // Automatically scroll to top of window whenever the active page view or selected article changes
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentView, selectedArticle]);
+
   const handleNavSectionChange = (sec: string) => {
     setActiveSection(sec);
     if (sec === 'about') {
       setCurrentView('about');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (sec === 'services') {
       setCurrentView('services');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (sec === 'projects') {
       setCurrentView('projects');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (sec === 'blog') {
       setSelectedArticle(null);
       setCurrentView('blog');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (sec === 'contact') {
       setCurrentView('contact');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      setCurrentView('home');
-      setTimeout(() => {
+      if (currentView !== 'home') {
+        setCurrentView('home');
+      } else {
         const element = document.getElementById(sec);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.scrollTo(0, 0);
         }
-      }, 50);
+      }
     }
   };
 
@@ -86,7 +87,6 @@ export default function App() {
             onGoBack={() => {
               setCurrentView('home');
               setActiveSection('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
@@ -97,7 +97,6 @@ export default function App() {
             onGoBack={() => {
               setCurrentView('home');
               setActiveSection('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
@@ -109,7 +108,6 @@ export default function App() {
             onGoBack={() => {
               setCurrentView('home');
               setActiveSection('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
@@ -126,7 +124,6 @@ export default function App() {
                 setCurrentView('home');
                 setActiveSection('home');
               }
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
@@ -137,7 +134,6 @@ export default function App() {
             onGoBack={() => {
               setCurrentView('home');
               setActiveSection('home');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             onOpenBooking={() => setBookingOpen(true)}
             onOpenCallback={() => setCallbackOpen(true)}
@@ -167,7 +163,6 @@ export default function App() {
               onOpenAboutPage={() => {
                 setCurrentView('about');
                 setActiveSection('about');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />
 
@@ -177,7 +172,6 @@ export default function App() {
               onOpenProjectsPage={() => {
                 setCurrentView('projects');
                 setActiveSection('projects');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />
 
@@ -188,13 +182,11 @@ export default function App() {
                 setSelectedArticle(null);
                 setCurrentView('blog');
                 setActiveSection('blog');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               onSelectArticle={(article) => {
                 setSelectedArticle(article);
                 setCurrentView('blog');
                 setActiveSection('blog');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             />
 
@@ -221,7 +213,6 @@ export default function App() {
                       onClick={() => {
                         setCurrentView('contact');
                         setActiveSection('contact');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="bg-[#F2B94C] hover:bg-[#e0a83b] text-gray-950 font-extrabold px-8 py-4 rounded-full text-xs sm:text-sm transition-all duration-300 shadow-md gold-glow shine-hover cursor-pointer flex items-center justify-center gap-2"
                     >
