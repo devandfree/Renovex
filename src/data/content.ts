@@ -654,7 +654,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Gros Œuvre',
     date: '20 Nov 2025',
     readTime: '8 min',
-    image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
     author: 'Antoine Moreau, Expert Géomètre'
   }
 ];
