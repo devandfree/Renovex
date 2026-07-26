@@ -31,6 +31,9 @@ export const Header: React.FC<HeaderProps> = ({
   const handleNavClick = (id: string) => {
     setActiveSection(id);
     setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   return (

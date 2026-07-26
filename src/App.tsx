@@ -37,7 +37,7 @@ export default function App() {
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [selectedArticle, setSelectedArticle] = useState<BlogPost | null>(null);
 
-  // Automatically scroll to top of window whenever active page view, selected service, or article changes
+  // Automatically scroll to top of window whenever active page view, selected service, article, or active section changes
   React.useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     document.documentElement.scrollTop = 0;
@@ -49,14 +49,31 @@ export default function App() {
       document.body.scrollTop = 0;
     });
 
-    return () => cancelAnimationFrame(frameId);
-  }, [currentView, selectedArticle, selectedServiceId]);
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }, 20);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      clearTimeout(timer);
+    };
+  }, [currentView, selectedArticle, selectedServiceId, activeSection]);
 
   const handleNavSectionChange = (sec: string) => {
     setSelectedServiceId(null);
     setSelectedArticle(null);
     setActiveSection(sec);
-    if (sec === 'about') {
+
+    // Scroll to top instantly
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+
+    if (sec === 'home') {
+      setCurrentView('home');
+    } else if (sec === 'about') {
       setCurrentView('about');
     } else if (sec === 'services') {
       setCurrentView('services');
@@ -69,14 +86,17 @@ export default function App() {
     } else {
       if (currentView !== 'home') {
         setCurrentView('home');
-      } else {
+      }
+      setTimeout(() => {
         const element = document.getElementById(sec);
-        if (element) {
+        if (element && sec !== 'home') {
           element.scrollIntoView({ behavior: 'smooth' });
         } else {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
         }
-      }
+      }, 50);
     }
   };
 
