@@ -88,9 +88,9 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking, onNavigate 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <p>© {new Date().getFullYear()} Renovex BTP. {lang === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
           
-          <div className="flex items-center gap-2 bg-gray-900/90 px-3.5 py-1.5 rounded-full border border-gray-800/80 text-xs text-gray-400 shadow-inner">
-            <span>{lang === 'fr' ? 'Site conçu & développé par' : 'Site designed & developed by'}</span>
-            <span className="font-semibold text-amber-400 tracking-wide">Steve Emane</span>
+          <div className="text-[11px] text-gray-500">
+            <span>{lang === 'fr' ? 'Conçu & développé par ' : 'Designed & developed by '}</span>
+            <span className="text-gray-400 font-medium">Steve Emane</span>
           </div>
 
           <div className="flex space-x-6">
