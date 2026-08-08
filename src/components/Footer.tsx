@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Heart } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Language } from '../types';
 
@@ -88,8 +88,10 @@ export const Footer: React.FC<FooterProps> = ({ lang, onOpenBooking, onNavigate 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <p>© {new Date().getFullYear()} Renovex BTP. {lang === 'fr' ? 'Tous droits réservés.' : 'All rights reserved.'}</p>
           
-          <div className="text-[11px] text-gray-500">
-            <span>{lang === 'fr' ? 'Conçu & développé par ' : 'Designed & developed by '}</span>
+          <div className="text-[11px] text-gray-500 flex items-center gap-1">
+            <span>Crafted with</span>
+            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline-block" />
+            <span>by</span>
             <span className="text-gray-400 font-medium">Steve Emane</span>
           </div>
 
